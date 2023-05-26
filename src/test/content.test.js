@@ -25,6 +25,8 @@ const schedulesYaml = fs.readdirSync(schedulesDirPath)
  * tests
 **/
 
+// SLUGS ARE UNIQUE
+
 test('course slugs should be unique', () => {
   const courseSlugs = coursesYaml.map(courseYaml => {
     return YAML.parse(courseYaml).slug;
@@ -43,3 +45,13 @@ test('schedule slugs should be unique', () => {
   }, [])
   expect(hasDistinctElements(scheduleSlugs)).toBe(true);
 });
+
+// RELATIONS ARE VALID
+
+// test('every class has a valid instructor slug', () => {
+//   expect();
+// })
+
+// test('every class has a valid course slug', () => {
+//   expect();
+// })
