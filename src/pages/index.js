@@ -1,128 +1,90 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React, { Fragment } from 'react'
+import { graphql } from 'gatsby'
+import Seo from '../components/seo'
+import { Link } from '../components/link'
+import { Details } from '../components/details'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+const HomePage = ({ data }) => {
+  const schedules = data.schedules.nodes
+  const today = new Date()
+  // select only the schedules starting in the near future,
+  const upcomingSchedules = schedules
+    // say, between now and 90 days from now.
+    .filter(schedule => {
+      const dateOffset = new Date(schedule.start_date) - today
+      return 0 < dateOffset && dateOffset < 90 * (24 * 60 * 60 * 1000)
+    })
+    .sort((s, t) => new Date(s.start_date) - new Date(t.start_date))
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
+  return (
+    <Fragment>
+      <h1>home</h1>
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
+      <h2>a section</h2>
+      <p>
+        Culpa pariatur consectetur irure deserunt labore occaecat aliqua enim
+        velit irure velit dolore quis ea dolore esse. Laboris est sint ex
+        proident nisi esse non dolore id fugiat dolore ut duis magna culpa
+        dolore. Lorem ipsum aliquip incididunt enim irure excepteur pariatur ea
+        commodo et id nulla officia tempor ad nulla pariatur dolor aliquip.
       </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
+
+      <h2>upcoming schedules</h2>
+
+      <p>
+        there's still time to enroll Consequat ea proident fugiat pariatur magna
+        id sit deserunt amet in aute occaecat amet ut.
+      </p>
+
+      {upcomingSchedules.map(schedule => (
+        <p key={schedule.id}>
+          <strong>{schedule.name}</strong> ({schedule.start_date})<br />
+          <Link to={schedule.path}>Details</Link> |{' '}
+          <Link to={schedule.registration_url}>Register</Link>
+        </p>
       ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+      <Link to="/schedules">view all schedules</Link>
+
+      <h2>another section</h2>
+      <p>
+        Lorem ipsum commodo et elit incididunt do aute pariatur irure deserunt
+        in duis. Incididunt cillum dolor qui eiusmod magna amet cupidatat
+        adipisicing tempor do cillum dolor incididunt magna aliqua. Ut eiusmod
+        est est ex ullamco deserunt cupidatat duis occaecat aliqua id esse. Esse
+        proident velit nostrud duis qui voluptate aliquip cillum enim. Ut labore
+        excepteur dolore dolor do ad ad anim sint non ad labore aute deserunt
+        magna incididunt reprehenderit. Sint eu voluptate in ullamco ea anim
+        cupidatat magna fugiat aliquip ut duis esse elit consectetur
+        reprehenderit nostrud.
+      </p>
+
+      <Details title="data" data={data} />
+    </Fragment>
+  )
+}
 
 /**
  * Head export to define metadata for the page
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Welcome!" />
 
-export default IndexPage
+export default HomePage
+
+export const query = graphql`
+  {
+    schedules: allSchedulesYaml {
+      nodes {
+        id
+        name
+        path
+        start_date(formatString: "YYYY-MM-DD")
+        registration_url
+        blocks {
+          dates
+        }
+      }
+    }
+  }
+`

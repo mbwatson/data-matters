@@ -1,99 +1,188 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Data Matters Website
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+## Getting Started
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+With Node 18 installed on your system, clone this repo and install dependencies with `npm i`.
 
-## 🚀 Quick start
+## 🚧 Local development
 
-1.  **Create a Gatsby site.**
+Start development server with `npm run start`.
 
-    Use the Gatsby CLI ([install instructions](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/#gatsby-cli)) to create a new site, specifying the default starter.
+### Test Data
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+There is a script to generate test content data, which will be dumped into the `src/test/content` directory.
 
-1.  **Start developing.**
+To generate new test content, run `npm run generate`.
+There are a few arguments that can be passed to control this script's behavior.
+Recall that pattern is `npm run [command] [-- <args>]`.
+Passing the `--verbose` flag (or just `-v` for short) will dump the generated content to the console for visual inspection.
+To do a content-generation dry-run, pass the `--pretend` flag (or just `-p` for short).
+For example, `npm run generate -- -pv` will show you lots of generated data (`-p`), but not write anything to disk (`-p`).
+This command is particularly useful for getting quick feedback while writing new content-generation functionality.
 
-    Navigate into your new site’s directory and start it up.
+> Note: Test content is not tracked by version control, as the content generator should be sufficient for every developer to generate comparable content that meets the requirements of the UI.
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+To start the development server with test content as data source, run `npm run start!`.
+This is the same a the above `run` command, but with a `!` appended.
 
-1.  **Open the source code and start editing!**
+> Note: The `start`, `test`, and `build` scripts all interface with content and have test-content-focused counterparts,
+> which have the same command with an appended `!`. For example, to build a production bundle of the site with real
+> content, run `npm run build`; to build the site with _test_ content, run `npm run build!`.
 
-    Your site is now running at `http://localhost:8000`!
+There are a couple more knobs on this generator. You can pass in the number of instructors and courses to generate with the `--instructors` and `--courses` arguments, respectively.
 
-    Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby Tutorial](https://www.gatsbyjs.com/docs/tutorial/getting-started/part-4/#use-graphiql-to-explore-the-data-layer-and-write-graphql-queries).
+```
+$ npm run generate -- --instructors=3 --courses=4
+ | successfully wrote to src/test/content:
+ |   - 3 instructors
+ |   - 4 courses
+ |   - 8 schedules
+```
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+For a more succinct approach, the command `npm run generate -- -i 3 -c 4` invokes identical behavior.
 
-## 🚀 Quick start (Netlify)
+> Note: There is currently no control over schedule generation.
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+### Prettier
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Prettier is installed as a development dependency, and it's configured to run on new commits.
+You can expect to see output like the following when new commits are made:
 
-## 🧐 What's inside?
+```
+$ git commit -m "add feature x"
+🔍  Finding changed files since git revision XXXXXXX.
+🎯  Found 2 changed files.
+✅  Everything is awesome!
+```
 
-A quick look at the top-level files and directories you'll see in a typical Gatsby project.
+## Content Management
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package.json
-    └── README.md
+All content lives in the `src/content` directory in YAML files.
+There are three core content types: Instructors, Courses, and Schedules.
+See types for these fields below, with their necessity and uniquess indicated.
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+- **Course**
 
-1.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+  - `slug` : `String`, required, unique
+  - `title` : `String`
+  - `description` : `String`
+  - `prereqs` : `String`
 
-1.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+- **Instructor**
 
-1.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+  - `slug` : `String`, unique
+  - `first_name` : `String`, required
+  - `last_name` : `String`, required
+  - `url` : `String`
+  - `affiliation` : `String`
+  - `bio` : `String`
 
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) for more detail).
+- **Schedule**
+  - `name` : `String`, required
+  - `slug` : `String`, required, unique
+  - `location` : `String`, required
+  - `registration_url` : `String`
+  - `blocks` :
+    - `name` : `String`, required
+    - `dates` : `[DateString (MM/DD/YYYY format)]`
+    - `classes` : `[Class]`
 
-1.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+where `Class` has this structure:
 
-1.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+- **Class**
 
-1.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+  - `course` : `String`, ref course `slug`, required
+  - `instructor` : `String`, ref instructor `slug`, required
+  - `location` : `String`
+  - `meeting_url` : `String`
 
-1.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+It is safe to think of `slug` as the `id` field, but it should be noted that Gatsby adds its own unique identifier field called `id` under the hood.
+Using `slug` as the identifier helps developers keep the relationship between the content artifacts and the URL at top of mind.
 
-1.  **`README.md`**: A text file containing useful reference information about your project.
+### Content & the Build Process
 
-## 🎓 Learning Gatsby
+All content starts as YAML. As an example, consider the following YAML file that defines a single instructor.
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
+```
+# instructor YAML -- pre-build
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/docs/tutorial/getting-started/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+slug: selena-okon
+first_name: Selena
+last_name: O'Kon
+affiliation: Hartmann, Botsford and Swift
+bio: Veritatis error nihil. Deleniti rem culpa commodi rerum dolores tenetur
+  tempore. Sit vel ratione labore in minus maxime. Ea eos repellat consequatur
+  dolorem. Illum enim laboriosam nisi facere rem itaque est quo quis.
+```
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+Data comes out of the build process as an object for consumption by the UI.
+Gatsby has a machanism for adding fields during this build step.
 
-## 💫 Deploy
+Consider again the above example instructor YAML, which would exit the build with the following structure.
 
-[Build, Deploy, and Host On Netlify](https://netlify.com)
+```
+# instructor object -- post-build
 
-The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
+{
+  slug: 'selena-okon',
+  path: '/instructors/selena-okon',
+  first_name: 'Selena',
+  last_name: 'O\'Kon',
+  full_name: 'Selena O\'Kon'
+  affiliation: 'Hartmann, Botsford and Swift',
+  bio: 'Veritatis error nihil. Deleniti rem culpa commodi rerum dolores tenetur tempore. Sit vel ratione labore in minus maxime. Ea eos repellat consequatur dolorem. Illum enim laboriosam nisi facere rem itaque est quo quis.',
+}
+```
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+Notice the object describes an intructor that has a couple new properties: `full_name` and `path`.
+We have the data necessary to construct and instructor's full name, so we may as well do so at this point;
+The same is true for the `path`. Here is a list of all new fields added at build time for each data type:
+
+- **instructors**
+  - new fields: `path`, `full_name`
+- **courses**
+  - new fields: `path`
+- **schdules**
+  - new fields: `path`, `start_date`
+
+Additional fields whose values can be derived from the existing content should be added at this step.
+The goal is to reduce/eliminate redundancy, which help keep a clean code base. The benefit extends beyond the developer experience, though.
+We also want to minimize the effort required from content managers.
+To this end, most data massaging--especially computationally complex and reused derivations--should be done at this step.
+This way the site's pages can query the same data for free.
+
+See Gatsby's documentation on [Customizing the GraphQL Schema](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/) for details on the any ways to massage content during the build process.
+
+## 🔨 Feature Development
+
+Ensuring the UI stays predictable is key to its sustainability and success.
+To help increase the probability of producing a stable application, we'll adhere to a test-driven development workflow.
+
+### Workflow
+
+The test content generators should be kept up-to-date with the core code base.
+In fact, this should be the first part of the code that gets touched when developing a new feature.
+This workflow should be followed when developing new features that involve data changes.
+
+1. Define feature and associated data alterations.
+2. Write tests (in `src/test/`) that will validate the desired data structure.
+   > Note: This test will fail (with both real and test content) as the content remains untouched at this point.
+3. Add functionality to `src/test/content-generator.js` to create content with the desired structure, _i.e._, when `npm run generate` is executed.
+4. Test with newly generated test data (`npm run test!`).
+5. Build UI support for restructured test content.
+6. Modify real content to desired new structure.
+7. Verify / remediate UI.
+
+Adhering to this workflow means any developer can spin up a local instance of the application with realistic test data at any time.
+This provides a consistent way to test new features against a suite of content that satisfies the requirements of the UI, including edge cases.
+The test suite will mature alongside the code base, helping to enforce structure requirements along the way.
+
+## 🎁 Building for Production
+
+Build a production bundle of this application with `npm run build`, which reside in the `public` directory.
+
+To test things out, run `npm run serve` to serve the built application at http://localhost:9000/.
+
+## 🚀 Deployment
+
+Deployment notes TBD.

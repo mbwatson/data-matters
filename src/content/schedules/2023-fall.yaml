@@ -1,0 +1,81 @@
+name: Fall 2023
+slug: fall-2023
+location: D.H. Hill Library, first floor
+registration_url: 'https://...'
+blocks:
+  - name: Monday & Tuesday
+    dates:
+      - 2023-08-07
+      - 2023-08-08
+    classes:
+      - course: intro-to-big-data-for-sr-ss
+        instructor: trent-buskirk
+        location: TBD
+        meeting_url: https://...
+      - course: basics-of-r-for-ds-and-stats
+        instructor: santiago-olivella
+        location: TBD
+        meeting_url: https://...
+      - course: intro-to-r
+        instructor: jonathan-duggins
+        location: TBD
+        meeting_url: https://...
+      - course: intro-to-python
+        instructor: jason-carter
+        location: TBD
+        meeting_url: https://...
+      - course: visualization-with-r
+        instructor: angela-zoss
+        location: TBD
+        meeting_url: https://...
+
+  - name: Wednesday
+    dates:
+      - 2023-08-09
+    classes:
+      - course: exploratory-data-analysis-with-r-markdown
+        instructor: jonathan-duggins
+        location: TBD
+        meeting_url: https://...
+      - course: overview-of-ai-deep-learning
+        instructor: siobhan-day-grady
+        location: TBD
+        meeting_url: https://...
+      - course: intermediate-python
+        instructor: jason-carter
+        location: TBD
+        meeting_url: https://...
+      - course: intro-to-geospatial-data
+        instructor: bill-wheaton
+        location: TBD
+        meeting_url: https://...
+      - course: adv-visualization-with-r
+        instructor: angela-zoss
+        location: TBD
+        meeting_url: https://...
+
+  - name: Thursday & Friday
+    dates:
+      - 2023-08-10
+      - 2023-08-11
+    classes:
+      - course: intro-to-effective-info-viz
+        instructor: eric-monson
+        location: TBD
+        meeting_url: https://...
+      - course: deep-learning-in-python
+        instructor: adel-alaeddini
+        location: TBD
+        meeting_url: https://...
+      - course: intro-to-statistical-ml-in-r
+        instructor: yufeng-liu
+        location: TBD
+        meeting_url: https://...
+      - course: basic-stats-in-r
+        instructor: vanessa-miller
+        location: TBD
+        meeting_url: https://...
+      - course: geospatial-analytics
+        instructor: laura-tateosian
+        location: TBD
+        meeting_url: https://...

@@ -1,0 +1,63 @@
+slug: intro-to-statistical-ml-in-r
+title: Introduction to Statistical Machine Learning in R
+description: >
+  ## Summary
+
+  Statistical machine learning and data mining is an interdisciplinary research
+  area which is closely related to statistics, computer sciences, engineering,
+  and bioinformatics. Many statistical machine learning and data mining
+  techniques and algorithms are useful in various scientific areas. This 2-day
+  short course will provide an overview of statistical machine learning and data
+  mining techniques with applications to the analysis of real data. Both
+  supervised and unsupervised techniques will be covered.
+
+
+  Supervised learning techniques include penalized regression such as LASSO and
+  its variants, support vector machines and tree-based methods.
+
+
+  Unsupervised learning techniques include dimension reduction methods such as
+  principal components analysis and clustering analysis. The main emphasis will
+  be on the analysis of real data sets from various scientific fields. The
+  techniques discussed will be demonstrated in R.
+
+
+  This course is intended for researchers who have some knowledge of statistics
+  and would like to be introduced to statistical machine learning and data mining
+  as well as for practitioners who would like to apply statistical machine
+  learning techniques to their problems. Machine learning plays an increasingly
+  significant role in data science and has become an integral part of many
+  fields—from biomedicine to business/marketing to social media. It is grounded
+  directly in our daily lives.
+
+  ## Core Topics
+
+  Discussion and R exercises will be included, as time permits, on the
+  following:
+
+    - Fundamentals of statistical learning
+    - Training versus test error rates
+    - Supervised versus unsupervised methods
+    - Bias/Variance tradeoff
+    - Linear regression and penalized regression
+    - Ridge regression
+    - Lasso
+    - Further extensions (if time permits)
+    - Cross-validation
+    - Classification techniques
+    - Logistic regression and penalized logistic regression
+    - Nearest neighbors classification
+    - Support vector machines
+    - Tree-based methods
+    - Bagging
+    - Random forests
+    - Unsupervised learning techniques
+    - Dimension reduction: Principal component analysis
+    - Other dimension reduction techniques (if time permits)
+    - Clustering
+    - Other selected topics (if time permits)
+
+prereqs: >
+  Participants should be familiar with linear regression and basic statistical
+  and probability concepts, as well as familiarity with R programming.  R and R
+  Studio should be installed before class.

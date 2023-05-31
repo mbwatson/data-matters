@@ -1,0 +1,37 @@
+slug: intro-to-geospatial-data
+title: Introduction to Geospatial Data
+description: >
+  ## Summary
+
+  This course offers a broad introduction into the use of geospatial data in data
+  science applications.  The course will be highly focused on what makes
+  geospatial data different from other types of data and what these differences
+  imply for using and applying geospatial data.  The course materials will be
+  built for non-geospatial professionals who find themselves needing to use
+  geospatial data effectively.
+
+
+  The availability and uses of geospatial data have been growing for decades.
+  Recently, with the advent of robust web-mapping and dynamic client-side web
+  tools many data analysts, applications programmers, web developers, and data
+  scientists of all types have been confronted with geospatial data without
+  having a background in geography or Geographic Information Systems (GIS).  This
+  course will ground students in fundamental concepts of geospatial data science,
+  geospatial computing, and geospatial applications so they can be more efficient
+  and accurate in using geospatial data in their daily jobs. 
+  What Participants Will Learn
+
+
+  Students will learn how to:
+
+    - Basics of map projections and the use of projected and un-projected geospatial
+    data
+    - How issues of scale, precision, and accuracy affect applications of geospatial
+    data
+    - Geospatial data models and the main ways geospatial data is presented in
+    computer form
+    - Key open-source and commercial off-the-shelf applications that handle
+    geospatial data
+
+prereqs: >
+  Basic computer skills.  An understanding of tools such as spreadsheets, relational database management systems (RDMS), and programming will be beneficial, but not required.

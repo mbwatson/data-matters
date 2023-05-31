@@ -1,0 +1,41 @@
+slug: overview-of-ai-deep-learning
+title: Overview of AI and Deep Learning
+description: >
+  ## Summary
+
+  There has been tremendous growth in AI over the past 10 years. Everyday we hear
+  of challenging problems that are being solved using AI. At the same time we
+  hear about the lack of explainability of decisions made by AI and about biases
+  in AI models. Many of the key advances in AI are due to the advances in machine
+  learning, especially deep learning. Natural language processing, computer
+  vision, speech translation, biomedical imaging, and robotics are some of the
+  areas that have benefited from deep learning methods. This course is designed
+  to provide an overview of AI and in particular deep learning. We will look at
+  the history of neural networks, how advances in data collection and computing
+  have caused the revival in neural networks, the different types of deep
+  learning networks and their applications, and tools and software available to
+  design and deploy deep networks. The objective is to provide you with an
+  overview, not necessarily to start coding and creating AI systems.
+
+
+  This course is for those who are interested in understanding more about AI and
+  deep learning, how they are used in different applications, and their
+  advantages and disadvantages.  It is not meant to teach you about any of the
+  deep learning frameworks or developing deep learning models.
+
+  ## Core Topics
+
+  The course will focus on the following topics:
+
+    - History of neural networks
+    - Neural networks as universal approximators
+    - Training neural networks as an optimization problem
+    - Deep neural networks
+    - Why deep learning now?
+    - Types of neural networks
+    - Applications of deep learning and neural networks in image processing,
+    natural language processing, robotics, computer vision, biomedical, and health
+    care.
+
+prereqs: >
+  This course does not have any prerequisites.

@@ -1,0 +1,97 @@
+slug: intro-to-big-data-for-sr-ss
+title: Introduction to Big Data & Machine Learning for Survey Researchers & Social Scientists
+description: >
+  ## Summary
+
+  In this course we explore how Big Data concepts, processes and machine learning
+  methods can be used within the context of Survey and Social Science Research.
+  Throughout this course we will illustrate key concepts using specific survey
+  research examples including tailored survey designs and nonresponse adjustments
+  and evaluation. 
+
+
+  The amount of data generated as a by-product in society is growing fast
+  including data from satellites, sensors, transactions, social media and
+  smartphones, just to name a few. Such data are often referred to as “big data”,
+  and can be used to create value in different areas such as health and crime
+  prevention, commerce and fraud detection.  An emerging practice in many areas
+  is to append or link big data sources with more specific and smaller scale
+  sources that often contain much more limited information.  This practice has
+  been used for some time by survey researchers in constructing frames by
+  appending auxiliary information that is often not directly available on the
+  frame, but can be obtained from an external source. Using Big Data has the
+  potential to go beyond the sampling phase for survey researchers and in fact
+  has the potential to influence the social sciences in general.  Big Data is of
+  interest for public opinion researchers and agencies that produce statistics to
+  find alternative data sources either to reduce costs, to improve estimates or
+  to produce estimates in a more timely fashion. However, Big Data pose several
+  interesting and new challenges to survey researchers and social scientists
+  among others who want to extract information from data. As Robert Groves (2012)
+  pointedly commented, the era is “appropriately called Big Data and not Big
+  Information”, because there is a lot of work for analysts before information
+  can be gained from “auxiliary traces of some process that is going on in
+  society.”  As we embark on the fourth era of survey research we will see more
+  use of big data within the survey research process as well as increased use of
+  machine learning methods to process and analyze these data.
+
+  ## Core Topics
+
+  This course will offer participants:
+
+    - an overview of key big data terminology and concepts
+    - a discussion of some primary issues with linking big data with survey
+    data
+    - a discussion of the opportunities for big data within the survey research
+    process
+    - a discussion of the opportunities for survey data within the big data
+    ecosystem
+    - issues of coverage and measurement errors within the big data context
+    - a discussion of information extraction and signal detection in the context of
+    big data
+    - a discussion of the similarities and differences in model building for
+    inference versus prediction
+    - a discussion of how to visualize massive amounts of data
+    - an overview of four popular machine learning methods including k-means
+    clustering, hierarchical clustering, classification and regression trees and
+    random forests using R with example code provided
+    - an introduction to the Rattle package that provides a graphical user
+    interface for machine learning within the R environment
+    - a discussion and illustration about how these and other methods can be used
+    in the survey research process
+
+  ## Course Outline
+
+  ### Day 1:
+
+    - An overview of big data, it’s potential, perils and total error
+    framework.
+    - An overview of machine learning
+    - An introduction between the difference between prediction and inference
+    - Challenges and solutions for plotting big data
+    - Introduction to unsupervised learning with examples and hands-on
+    activities
+    - K-Means clustering
+
+  ### Day 2:
+
+    - K-means clustering, cont.
+    - Hierarchical clustering
+    - k-nearest neighbors
+    - Introduction to supervised learning with examples and hands-on activities
+    - Tree-based methods
+    - Ensemble methods – including random forests and extra trees
+    - Introduction to the Rattle package in R
+
+prereqs: >
+  The course is aimed at both producers and users of survey data as well as
+  social scientists who want to learn machine learning methods that can be used
+  within the broader context of social science data. The course is aimed equally
+  at researchers and students from academia, government and the voluntary and
+  private sector and is appropriate for researchers new to this topic who have
+  some familiarity with survey research concepts such as responsive/tailored
+  survey designs, measurement error, nonresponse bias and data linkage.
+  Familiarity with model building and model selection as well as the R program is
+  not required but could also be helpful.  While this course is not intended to
+  teach participants machine learning via R, we will explore four common machine
+  learning algorithms and provide R code and output to illustrate these methods
+  within the context of the R language.

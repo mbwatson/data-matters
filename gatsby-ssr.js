@@ -1,12 +1,7 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
- */
+const React = require('react')
+const { Layout } = require('./src/components/layout')
 
-/**
- * @type {import('gatsby').GatsbySSR['onRenderBody']}
- */
-exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
+// wraps every page in ur Layout component
+exports.wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>
 }

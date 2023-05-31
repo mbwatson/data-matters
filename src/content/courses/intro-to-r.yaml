@@ -1,0 +1,60 @@
+slug: intro-to-r
+title: Introduction to Programming in R
+description: >
+  ## Summary
+
+  Statistical programming is an integral part of many data-intensive careers and
+  data literacy, and programming skills have become a necessary component of
+  employment in many industries. This course begins with necessary concepts for
+  new programmers—both general and statistical—and explores some necessary
+  programming topics for any job that utilizes data. The R software package will
+  be used as it is one of the most popular programs in statistics and data
+  science. R programming is done in the RStudio integrated development
+  environment.
+
+
+  Data is everywhere. Every industry, and most careers, now involve working with
+  data at some point. As data-driven decisions become the norm in many careers,
+  individuals need to add to their professional skills by learning the essentials
+  of programming.
+
+
+  Whether their goal is to better communicate with coworkers who program or to
+  integrate programming in their day-to-day jobs, this course benefits
+  individuals who are looking to understand general principles behind statistical
+  programming and to develop programming skills necessary to work in data-related
+  areas.
+
+
+  Even though computers are “literal,” programming offers many techniques for
+  solving a particular problem. The combination of necessary precision and
+  freedom of choice regarding techniques can be frustrating for beginners.
+
+  ## Core Topics
+
+  Covering both general computing concepts and an introduction to R, a general
+  outline of the course is given below:
+
+    - Day 1:
+      + General computing concepts
+      + Fundamental programming concepts
+      + Introduction to R and RStudio
+      + R functions
+      + Common R data structures
+
+    - Day 2:
+      + R packages
+      + Reading and writing data files (readr package)
+      + Subsetting data by rows, columns, or both (dplyr package)
+      + Deriving new variables unconditionally and conditionally (dplyr package)
+      + Introduction to summarizing data
+
+prereqs: >
+  This course aims to support individuals with little to no previous programming
+  experience as they gain the fundamentals necessary to be successful
+  programmers. No prior programming experience is expected in R or any other
+  language. However, this course relies on active participation of the
+  participants via hands-on programming. R and RStudio should be installed in
+  advance so that participants can devote their time to practicing the skills
+  from the course. Participants are provided instructions and resources in
+  advance to assist with the installation process.

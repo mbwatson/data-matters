@@ -1,0 +1,45 @@
+slug: intro-to-effective-info-viz
+title: Introduction to Effective Information Visualization
+description: >
+  ## Summary
+
+  Participants will see how freely and commonly available software can be used to
+  create effective visualizations; learn how to clean and re-structure data; and
+  learn basic effective visualization principles so you can go beyond the
+  defaults and create eye-catching and impactful figures!
+
+
+  Visualization is a powerful way to reveal patterns in data, attract attention,
+  and get your message across to an audience quickly and clearly.  However, there
+  are many steps in that journey from information to influence, and many
+  questions – what visualization tools to use, how to get data into the right
+  format, and which choices to make when putting it all together to tell your
+  story? This course will quickly walk participants through a wide variety of
+  data and chart types to help even beginners feel comfortable embarking on a new
+  visualization project.
+
+  ## Core Topics
+
+  The course will cover five major topic areas during the eight time blocks over
+  two days. Sessions will combine lecture and hands-on activities in data
+  cleaning, transformation, and visualization.
+
+    - Tips for effective data visualization and graphic design (2 course
+    modules)
+    - Charts, maps, and interactive dashboards with Tableau (3 course modules)
+    - Cleaning and re-structuring data using OpenRefine (1 course module)
+    - Free web-based tools such as RAW for less-common visualization types
+    - Critique of existing visualizations and information graphics
+
+prereqs: >
+  This course is designed at an introductory level but will assume a basic
+  understanding of spreadsheets as a way of storing and processing data. No
+  programming will be necessary. Note that the Tableau training starts at a very
+  introductory level, so if you are already an advanced user, that particular
+  content may feel basic to you.
+
+
+  Before class, please install recent versions of Tableau (Public or Desktop), a
+  web browser, and OpenRefine in order to participate in the hands-on
+  computer-based activities. Please have software installed before class. We will
+  not be spending time on that during the day.

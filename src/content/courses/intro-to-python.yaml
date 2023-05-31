@@ -1,0 +1,31 @@
+slug: intro-to-python
+title: Introduction to Python
+description: >
+  ## Summary
+
+  Learning Python is important for any aspiring data scientist who is interested
+  in programming as a skill, a discipline, and a profession.
+
+
+  This course will serve as a foundation for students seeking to use programming
+  as a tool in their data science tool belt. This course will help students
+  evaluate, communicate with, and work with programmers or code. Participants
+  will get hands-on practice with creating and manipulating data sets. At an
+  introductory level, participants will learn to create programs that manipulate
+  data, perform error handling, and store and retrieve data using relational
+  databases.
+
+  ## Core Topics
+
+  Students will learn how to:
+
+    - create programs that manipulate data
+    - perform error handling
+    - store and retrieve data using relational databases
+    - use the pandas library, the de facto standard to work with tabular data in
+    Python
+
+prereqs: >
+  Participants will need to be skilled in basic mathematics and algebra as well
+  as e-mail and web usage. They will also, of course, need a computer to
+  participate in the hands-on exercises.
